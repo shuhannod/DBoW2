@@ -1499,7 +1499,6 @@ void TemplatedVocabulary<TDescriptor, F>::load(const cv::FileStorage &fs, const 
 
   m_nodes.resize(fn.size() + 1);  // +1 to include root
   m_nodes[0].id = 0;
-  std::cout << "lets try this" << std::endl;
   for (unsigned int i = 0; i < fn.size(); ++i) {
     cv::FileNode temp = fn[i];
     NodeId nid = (int)temp["nodeId"];
@@ -1514,7 +1513,6 @@ void TemplatedVocabulary<TDescriptor, F>::load(const cv::FileStorage &fs, const 
 
     F::fromString(m_nodes[nid].descriptor, d);
   }
-  std::cout << "lets try this" << std::endl;
   // words
   fn = fvoc["words"];
 
